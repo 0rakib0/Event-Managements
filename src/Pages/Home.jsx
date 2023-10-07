@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Event from "./Event";
+import Shecdule from "./shecdule";
 
 const Home = () => {
 
@@ -12,28 +13,28 @@ const Home = () => {
         {
             name: 'John',
             title: 'Marketing',
-            profile:'',
+            profile:'https://www.kekstcnc.com/media/5795/adam-hedengren-deria_596x540.jpg?anchor=center&mode=crop&width=380&height=460&rnd=133190387030000000',
             time: '11.30 AM - 12.30 PM'
 
         },
         {
             name: 'Karly Q Link',
             title: 'Developing',
-            profile:'',
+            profile:'https://i.insider.com/5899ffcf6e09a897008b5c04?width=1000&format=jpeg&auto=webp',
             time: '12.30 AM - 1.30 PM'
 
         },
         {
             name: 'Olivia Hold',
             title: 'Managment',
-            profile:'',
+            profile:'https://acsjournals.onlinelibrary.wiley.com/cms/asset/eb558050-1e4c-4b14-a41b-da0d4a6fd8f5/cncr34536-fig-0001-m.jpg',
             time: '2.30 AM - 3.30 PM'
 
         },
         {
-            name: 'John',
-            title: 'Marketing',
-            profile:'',
+            name: 'Anne Meri',
+            title: 'Automation',
+            profile:'https://i1.rgstatic.net/ii/profile.image/1005606894829575-1616766775345_Q512/Tais-Galvao.jpg',
             time: '3.30 AM - 4.30 PM'
 
         },
@@ -107,8 +108,24 @@ const Home = () => {
                     <h1 className="text-4xl font-bold my-2">RECENT EVENT SCHEDULE</h1>
                     <h1 className="text-2xl font-semibold">08 OCTOBER 2021</h1>
                 </div>
-                <div>
-
+                <div className="">
+                    {
+                        shedule.slice(0, 2).map((shedule, idx) =><Shecdule key={idx} shecdule={shedule}></Shecdule>)
+                    }
+                </div>
+                <div className="grid grid-cols-3 my-6 border-2 border-primaryColor">
+                    <div className="bg-primaryColor text-white text-2xl font-semibold text-center py-4">
+                        <h1>1.30 PM - 2.30 PM</h1>
+                        <p>Room No - 09</p>
+                    </div>
+                    <div className="col-span-2 py-8 text-center">
+                        <h1 className="text-2xl font-semibold">Lunch Time</h1>
+                    </div>
+                </div>
+                <div className="">
+                    {
+                        shedule.slice(2, 4).map((shedule, idx) =><Shecdule key={idx} shecdule={shedule}></Shecdule>)
+                    }
                 </div>
             </div>
         </div>
