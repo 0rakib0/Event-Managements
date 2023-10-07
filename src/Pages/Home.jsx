@@ -13,32 +13,32 @@ const Home = () => {
         {
             name: 'John',
             title: 'Marketing',
-            profile:'https://www.kekstcnc.com/media/5795/adam-hedengren-deria_596x540.jpg?anchor=center&mode=crop&width=380&height=460&rnd=133190387030000000',
+            profile: 'https://www.kekstcnc.com/media/5795/adam-hedengren-deria_596x540.jpg?anchor=center&mode=crop&width=380&height=460&rnd=133190387030000000',
             time: '11.30 AM - 12.30 PM'
 
         },
         {
             name: 'Karly Q Link',
             title: 'Developing',
-            profile:'https://i.insider.com/5899ffcf6e09a897008b5c04?width=1000&format=jpeg&auto=webp',
+            profile: 'https://i.insider.com/5899ffcf6e09a897008b5c04?width=1000&format=jpeg&auto=webp',
             time: '12.30 AM - 1.30 PM'
 
         },
         {
             name: 'Olivia Hold',
             title: 'Managment',
-            profile:'https://acsjournals.onlinelibrary.wiley.com/cms/asset/eb558050-1e4c-4b14-a41b-da0d4a6fd8f5/cncr34536-fig-0001-m.jpg',
+            profile: 'https://acsjournals.onlinelibrary.wiley.com/cms/asset/eb558050-1e4c-4b14-a41b-da0d4a6fd8f5/cncr34536-fig-0001-m.jpg',
             time: '2.30 AM - 3.30 PM'
 
         },
         {
             name: 'Anne Meri',
             title: 'Automation',
-            profile:'https://i1.rgstatic.net/ii/profile.image/1005606894829575-1616766775345_Q512/Tais-Galvao.jpg',
+            profile: 'https://i1.rgstatic.net/ii/profile.image/1005606894829575-1616766775345_Q512/Tais-Galvao.jpg',
             time: '3.30 AM - 4.30 PM'
 
         },
-        
+
     ]
 
     useEffect(() => {
@@ -95,9 +95,9 @@ const Home = () => {
                         events.slice(0, length).map(event => <Event key={event.eventID} event={event}></Event>)
                     }
                 </div>
-        
+
                 <div className={`flex justify-center ${length === events.length && 'hidden'}`}>
-                    <button onClick={()=>setLenght(events.length)} className="bg-primaryColor px-14 text-white my-4 mx-auto py-2 rounded-md">See All</button>
+                    <button onClick={() => setLenght(events.length)} className="bg-primaryColor px-14 text-white my-4 mx-auto py-2 rounded-md">See All</button>
                 </div>
             </div>
 
@@ -110,7 +110,7 @@ const Home = () => {
                 </div>
                 <div className="">
                     {
-                        shedule.slice(0, 2).map((shedule, idx) =><Shecdule key={idx} shecdule={shedule}></Shecdule>)
+                        shedule.slice(0, 2).map((shedule, idx) => <Shecdule key={idx} shecdule={shedule}></Shecdule>)
                     }
                 </div>
                 <div className="grid grid-cols-3 my-6 border-2 border-primaryColor">
@@ -124,9 +124,51 @@ const Home = () => {
                 </div>
                 <div className="">
                     {
-                        shedule.slice(2, 4).map((shedule, idx) =><Shecdule key={idx} shecdule={shedule}></Shecdule>)
+                        shedule.slice(2, 4).map((shedule, idx) => <Shecdule key={idx} shecdule={shedule}></Shecdule>)
                     }
                 </div>
+            </div>
+
+            {/* Speaker Section */}
+            <div className="my-6 w-11/12 mx-auto">
+                <div className="text-center">
+                    <span className="text-2xl text-primaryColor font-semibold">Speakers</span>
+                    <h1 className="text-4xl font-bold my-2">TALENTED SPEAKER</h1>
+                    <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+                        <div>
+                            <img src="https://demo.egenslab.com/html/eventlab/assets/images/speaker/speaker-2.png" className="w-full" alt="" />
+                            <div className="bg-primaryColor py-2 rounded-b-lg text-white">
+                                <h1 className="text-2xl font-semibold">Scarlett Eleanor</h1>
+                                <p>Marketing</p>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="https://demo.egenslab.com/html/eventlab/assets/images/speaker/speaker-3.png" className="w-full" alt="" />
+                            <div className="bg-primaryColor py-2 rounded-b-lg text-white">
+                                <h1 className="text-2xl font-semibold">Jacob Logan</h1>
+                                <p>Business Manager</p>
+                            </div>
+                        </div>
+                        <div className="bg-primaryColor rounded-b-lg text-white">
+                            <img src="https://demo.egenslab.com/html/eventlab/assets/images/speaker/speaker-1.png" className="w-full" alt="" />
+                            <div>
+                                <h1 className="text-2xl font-semibold">Santiago Axel</h1>
+                                <p>Web Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* Test monial Section */}
+            <div className="my-6 w-11/12 mx-auto">
+                <div className="text-center">
+                    <span className="text-2xl text-primaryColor font-semibold">Testimonial</span>
+                    <h1 className="text-4xl font-bold my-2">WHAT PEOPLE SAY ABOUT EVENTLAB.</h1>
+                    <p>Cras semper, massa vel aliquam luctus, eros odio tempor turpis, ac placerat metus tortor eget magna. Donec mattis posuere pharetra. Donec vestibulum ornare velit ut sollicitudin ut sollicitudin.</p>
+                </div>
+
+                
+                
             </div>
         </div>
 
