@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         textColor: '#212529',
-        primaryColor: '#FFA500',
+        primaryColor: '#dc4d01',
       },
       fontFamily: {
         Barlow: ['Barlow', 'sans-serif']
