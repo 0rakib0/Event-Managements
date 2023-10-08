@@ -8,7 +8,7 @@ const NavBar = () => {
         <li className="ml-4"><NavLink to="/contact">CONTACT</NavLink></li>
         <li className="ml-4"><NavLink to="/about">ABOUT</NavLink></li>
         <li className="ml-4"><NavLink to="/profile">PROFILE</NavLink></li>
-        <li className="ml-4"><NavLink to="/login">LOGIN</NavLink></li>
+        <li className="ml-4"><NavLink to="/login">LOGIN/REGISTER</NavLink></li>
         
     </>
 
@@ -23,7 +23,7 @@ const NavBar = () => {
                         {NavLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-4xl font-bold">EVENTWAY</a>
+                <a className="text-4xl font-bold">EVENT<span className="text-primaryColor">WAY</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

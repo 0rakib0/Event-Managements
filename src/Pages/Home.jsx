@@ -160,15 +160,27 @@ const Home = () => {
                 </div>
             </div>
             {/* Test monial Section */}
-            <div className="my-6 w-11/12 mx-auto">
-                <div className="text-center">
+            <div className="my-6 w-11/12 mx-auto grid md:grid-cols-2 items-center ">
+                <div className="px-6">
                     <span className="text-2xl text-primaryColor font-semibold">Testimonial</span>
                     <h1 className="text-4xl font-bold my-2">WHAT PEOPLE SAY ABOUT EVENTLAB.</h1>
                     <p>Cras semper, massa vel aliquam luctus, eros odio tempor turpis, ac placerat metus tortor eget magna. Donec mattis posuere pharetra. Donec vestibulum ornare velit ut sollicitudin ut sollicitudin.</p>
                 </div>
 
-                
-                
+                <div className="border rounded border-primaryColor py-12 px-6 mt-6">
+                    <div className="flex items-center gap-4 my-4">
+                        <img src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg" className="w-24" alt="" />
+                        <div className="flex items-center flex-col">
+                            <h1 className="text-xl font-bold">Jhon Abrar</h1>
+                            <p>Marketing</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p className="pr-6">Cras semper, massa vel aliquam luctus, eros odio tempor turpis, ac placerat metus tortor eget magna. Donec mattis posuere pharetra. Donec vestibulum ornare velit ut.</p>
+                    </div>
+                </div>
+
+
             </div>
         </div>
 
