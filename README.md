@@ -1,6 +1,6 @@
 # Project Name: Confarence Event
 
-[Live Site](https://652407f817080800a095030d--effervescent-halva-05f067.netlify.app/profile)
+[Live Site](https://652407f817080800a095030d--effervescent-halva-05f067.netlify.app/)
 
 
 ## Features
