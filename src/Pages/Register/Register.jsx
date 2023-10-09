@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
     const [success, setSuccess] = useState('')
     const [error, setError] = useState('')
-    const { createUser } = useContext(authContext)
+    const { createUser, Logout } = useContext(authContext)
 
     const naviget = useNavigate()
     const handleRegister = e => {
@@ -47,9 +47,18 @@ const Register = () => {
                     .catch(error => {
                         setError(error.message)
                     })
-                toast("User Successfully register! its auto redirect after 5 second");
-                setTimeout(() => {
-                    naviget('/');
+                    
+                    setTimeout(() => {
+                        Logout()
+                    .then(() =>{
+                        
+                    toast("User Successfully register! its auto redirect after 5 second");
+                    })
+                    .catch(error =>{
+                        setError(error.message)
+                    })
+
+                    naviget('/login');
                 }, 5000);
             })
             .catch(error => {
