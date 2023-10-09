@@ -6,6 +6,8 @@ import Register from "../Pages/Register/Register";
 import EventDetails from "../Pages/Event-Details/EventDetails";
 import PrivetRout from "./PrivetRout/PrivetRout";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import Pricing from "../Pages/Pricing/Pricing";
+import Profile from "../Pages/Profile/Profile";
 
 
 
@@ -32,6 +34,14 @@ const router = createBrowserRouter([
           path:'/details/:eventId',
           element:<PrivetRout><EventDetails></EventDetails></PrivetRout>,
           loader: () => fetch('../../Events.json')
+        },
+        {
+          path:'/pricing',
+          element:<PrivetRout><Pricing></Pricing></PrivetRout>
+        },
+        {
+          path:'/profile',
+          element: <PrivetRout><Profile></Profile></PrivetRout>
         }
       ]
     },

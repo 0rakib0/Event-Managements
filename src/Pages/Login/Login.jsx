@@ -3,11 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../../AuthProvider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Login = () => {
     const { LoginUser, LoginWithGoogle } = useContext(authContext)
 
-    const [success, setSuccess] = useState('')
-    const [error, setError] = useState('')
     const naviget = useNavigate()
 
     const handleLogin = e => {
@@ -16,29 +17,33 @@ const Login = () => {
         const form = new FormData(e.target)
         const email = form.get('email')
         const password = form.get('password')
-        setSuccess('')
-        setError('')
         LoginUser(email, password)
             .then(result => {
                 const user = result.user
                 console.log(user)
-                naviget('/')
+                toast("User Successfully Login! its auto redirect after 5 second");
+                setTimeout(() => {
+                    naviget('/');
+                }, 5000);
             })
             .catch(error => {
-                setError(error.message)
+                toast(error.message);
             })
     }
 
-    const handleGoogleLogin = () =>{
+    const handleGoogleLogin = () => {
         LoginWithGoogle()
-        .then(result =>{
-            const user = result.user
-            console.log(user)
-            naviget('/')
-        })
-        .catch(error =>{
-            setError(error.message)
-        })
+            .then(result => {
+                const user = result.user
+                console.log(user)
+                toast("User Successfully register! its auto redirect after 5 second");
+                setTimeout(() => {
+                    naviget('/');
+                }, 5000);
+            })
+            .catch(error => {
+                toast(error.message);
+            })
     }
     return (
         <div className="hero min-h-screen h-3/4 bg-base-200">
@@ -49,8 +54,6 @@ const Login = () => {
                 <a onClick={handleGoogleLogin} className="flex items-center text-white mt-4 p-2 rounded-md text-2xl gap-2 justify-center mx-auto text-center bg-primaryColor">
                     LOGIN WITH<FaGoogle className="text-blue-500"></FaGoogle>
                 </a>
-                {success && <p className="p-x-4 text-green-500 text-center">{success}</p>}
-                {error && <p className="p-4 text-red-600 text-center">{error}</p>}
                 <form onSubmit={handleLogin} className="card-body">
                     <div className="form-control">
                         <label className="label">
@@ -68,11 +71,12 @@ const Login = () => {
                         </label>
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-primary">Login</button>
+                        <button className="btn bg-primaryColor text-white hover:text-textColor">Login</button>
                     </div>
                     <p>Do not have accounts? <Link className="text-blue-600" to='/register'>Register</Link></p>
                 </form>
             </div>
+            <ToastContainer />
         </div>
     )
 }

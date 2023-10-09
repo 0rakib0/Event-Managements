@@ -20,7 +20,7 @@ const NavBar = () => {
     const NavLinks = <>
         <li className="ml-4"><NavLink to="/">HOME</NavLink></li>
         <li className="ml-4"><NavLink to="/contact">CONTACT</NavLink></li>
-        <li className="ml-4"><NavLink to="/about">ABOUT</NavLink></li>
+        <li className="ml-4"><NavLink to="/pricing">PRICING</NavLink></li>
         <li className="ml-4"><NavLink to="/profile">PROFILE</NavLink></li>
         {user?<li className="ml-4" onClick={handleLogout}><Link>LOGOUT</Link></li> :
         <li className="ml-4"><NavLink to="/login">LOGIN/REGISTER</NavLink></li>}
@@ -38,15 +38,15 @@ const NavBar = () => {
                         {NavLinks}
                     </ul>
                 </div>
-                <a className="text-4xl font-bold">EVENT<span className="text-primaryColor">WAY</span></a>
+                <a className="md:text-4xl font-bold">EVENT<span className="text-primaryColor">WAY</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {NavLinks}
                 </ul>
             </div>
-            {user && <p>{user.displayName}</p>}
             {user&& <div className="navbar-end">
+            {user && <p className="mr-2">{user.displayName}</p>}
                 <div className="avatar">
                     <div className="w-16 rounded-full">
                         <img src={user.photoURL} />

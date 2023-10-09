@@ -3,13 +3,16 @@ import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../../AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Register = () => {
     const [success, setSuccess] = useState('')
     const [error, setError] = useState('')
-    const {createUser} = useContext(authContext)
+    const { createUser } = useContext(authContext)
 
     const naviget = useNavigate()
-    const handleRegister = e =>{
+    const handleRegister = e => {
         e.preventDefault()
 
         const form = new FormData(e.target)
@@ -21,43 +24,46 @@ const Register = () => {
         setError('')
         setSuccess('')
 
-        
+
         var containsCapitalAndSpecial = /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).*$/.test(password);
-        if(password.length < 6){
+        if (password.length < 6) {
             setError('Password must be more then 6 charecter')
-            return 
+            return
         }
-        if(!containsCapitalAndSpecial){
+        if (!containsCapitalAndSpecial) {
             setError('At list one Capital latter and a special character Required!')
             return
         }
         createUser(email, password)
-        .then(result =>{
-            const user = result.user
-            updateProfile(user, {
-                displayName: name,
-                photoURL: photoUrl
-            })
-            .then(()=>{
+            .then(result => {
+                const user = result.user
+                updateProfile(user, {
+                    displayName: name,
+                    photoURL: photoUrl
+                })
+                    .then(() => {
 
+                    })
+                    .catch(error => {
+                        setError(error.message)
+                    })
+                toast("User Successfully register! its auto redirect after 5 second");
+                setTimeout(() => {
+                    naviget('/');
+                }, 5000);
             })
-            .catch(error =>{
+            .catch(error => {
                 setError(error.message)
             })
-            naviget('/')
-        })
-        .catch(error =>{
-            setError(error.message)
-        })
-       
+
     }
     return (
         <div className="hero min-h-screen h-3/4 bg-base-200">
 
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <h1 className="text-center text-2xl font-bold mt-4">Please Register</h1>
-                 {success && <p className="p-x-4 text-green-500 text-center">{success}</p>}
-                 {error && <p className="p-4 text-red-600 text-center">{error}</p>}
+                {success && <p className="p-x-4 text-green-500 text-center">{success}</p>}
+                {error && <p className="p-4 text-red-600 text-center">{error}</p>}
                 <form onSubmit={handleRegister} className="card-body">
                     <div className="form-control">
                         <label className="label">
@@ -92,6 +98,7 @@ const Register = () => {
                     <p>QAlready have accounts? <Link className="text-blue-600" to='/login'>Login</Link></p>
                 </form>
             </div>
+            <ToastContainer />
         </div>
     );
 };

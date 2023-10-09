@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Event from "./Event";
 import Shecdule from "./shecdule";
+import { Link } from "react-router-dom";
 
 const Home = () => {
 
@@ -50,45 +51,22 @@ const Home = () => {
 
     return (
         <div>
-            <div>
-                <div className="carousel w-full h-[80vh]">
-                    <div id="slide1" className="carousel-item relative w-full">
-                        <img src="https://zoo-de-mack.com/wp-content/uploads/2018/02/slider_bg-2.jpg" className="w-full" />
-                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide4" className="btn btn-circle">❮</a>
-                            <a href="#slide2" className="btn btn-circle">❯</a>
-                        </div>
-                    </div>
-                    <div id="slide2" className="carousel-item relative w-full">
-                        <img src="https://zoo-de-mack.com/wp-content/uploads/2018/02/slider_bg-2.jpg" className="w-full" />
-                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide1" className="btn btn-circle">❮</a>
-                            <a href="#slide3" className="btn btn-circle">❯</a>
-                        </div>
-                    </div>
-                    <div id="slide3" className="carousel-item relative w-full">
-                        <img src="https://zoo-de-mack.com/wp-content/uploads/2018/02/slider_bg-2.jpg" className="w-full" />
-                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide2" className="btn btn-circle">❮</a>
-                            <a href="#slide4" className="btn btn-circle">❯</a>
-                        </div>
-                    </div>
-                    <div id="slide4" className="carousel-item relative w-full">
-                        <img src="https://zoo-de-mack.com/wp-content/uploads/2018/02/slider_bg-2.jpg" className="w-full" />
-                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide3" className="btn btn-circle">❮</a>
-                            <a href="#slide1" className="btn btn-circle">❯</a>
-                        </div>
+            <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://png.pngtree.com/thumb_back/fh260/background/20230301/pngtree-businessman-ready-for-new-challenges-in-business-concept-photo-image_1728211.jpg)' }}>
+                <div className="hero-overlay bg-opacity-60"></div>
+                <div className="hero-content text-center text-neutral-content">
+                    <div className="max-w-md">
+                        <h1 className="mb-5 text-5xl font-bold">EVENT & <span className="text-primaryColor">CONFARENCE</span></h1>
+                        <p className="mb-5 text-semibold">Experience seamless networking with our top-notch facilities: modern conference rooms, complimentary high-speed Wi-Fi, and delicious catering services.</p>
+                        <Link to='/pricing'><button className="btn btn-primary">Price Details</button></Link>
                     </div>
                 </div>
-
             </div>
 
             {/* Events Section */}
             <div className="my-6 w-11/12 mx-auto">
                 <div className="text-center">
                     <span className="text-2xl text-primaryColor font-semibold">Event</span>
-                    <h1 className="text-4xl font-bold my-2">BUSSINESS EVENT</h1>
+                    <h1 className="text-4xl font-bold my-2">EVENT SERVISES</h1>
                 </div>
                 <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
                     {
