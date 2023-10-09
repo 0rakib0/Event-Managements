@@ -1,8 +1,12 @@
-# React + Vite
+# Project Name: Confarence Event
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Live Site](https://652407f817080800a095030d--effervescent-halva-05f067.netlify.app/profile)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Firebase authentication
+- There is some private rout like Event details, pricing and profile
+- User can not get assecc private rout without Logint
+- User can Login with email
+- I use AOS package in this project
+- if page not found user can get a nice error page 
