@@ -1,14 +1,29 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { authContext } from "../../AuthProvider/AuthProvider";
 
 
 const NavBar = () => {
+
+    const {Logout, user} = useContext(authContext)
+
+    const handleLogout = () =>{
+        Logout()
+        .then(()=>{
+            console.log('Logout Success!')
+        })
+        .catch(error =>{
+            console.log(error.message)
+        })
+    }
 
     const NavLinks = <>
         <li className="ml-4"><NavLink to="/">HOME</NavLink></li>
         <li className="ml-4"><NavLink to="/contact">CONTACT</NavLink></li>
         <li className="ml-4"><NavLink to="/about">ABOUT</NavLink></li>
         <li className="ml-4"><NavLink to="/profile">PROFILE</NavLink></li>
-        <li className="ml-4"><NavLink to="/login">LOGIN/REGISTER</NavLink></li>
+        {user?<li className="ml-4" onClick={handleLogout}><Link>LOGOUT</Link></li> :
+        <li className="ml-4"><NavLink to="/login">LOGIN/REGISTER</NavLink></li>}
         
     </>
 
@@ -30,13 +45,14 @@ const NavBar = () => {
                     {NavLinks}
                 </ul>
             </div>
-            <div className="navbar-end">
+            {user && <p>{user.displayName}</p>}
+            {user&& <div className="navbar-end">
                 <div className="avatar">
                     <div className="w-16 rounded-full">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGMD8-82Wl0-K0OqE4ZIy-mo06ia3_EULiO2uJdViNmsAKq4AeOrU6OfX2pwWoqWW2p6M&usqp=CAU" />
+                        <img src={user.photoURL} />
                     </div>
                 </div>
-            </div>
+            </div>}
         </div>
     );
 };
