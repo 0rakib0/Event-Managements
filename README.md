@@ -35,7 +35,7 @@ console.log(greetign);
 
 #### Answer: A ?
 
-<i>Write your explanation here</i>
+<i>Write your explanation here: </i>
   Jodi JS object ar modde kono value na dei tahole ata epty opject return kore
 </p>
 </details>
@@ -58,10 +58,10 @@ sum(1, "2");
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: C?
 
-<i>Write your explanation here</i>
-
+<i>Write your explanation here: </i>
+Akhane Integer and string paramiter hisabe deyahoyese JavaScripts a String and Integet sum hoyna
 </p>
 </details>
 
@@ -84,10 +84,10 @@ console.log(food);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: A?
 
-<i>Write your explanation here</i>
-
+<i>Write your explanation here: </i>
+Akhane info akta object and food akta arry JavaScript a object and arry sompurno alada data type tai info change ar karone Array te kono effect porbena
 </p>
 </details>
 
@@ -109,10 +109,10 @@ console.log(sayHi());
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: B?
 
 <i>Write your explanation here</i>
-
+  Akhane peramiter hisabe name expect kore but panamiter na deyar karone ata undefine return kore
 </p>
 </details>
 
@@ -137,9 +137,9 @@ console.log(count);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: C?
 
 <i>Write your explanation here</i>
-
+  JavaScript a 0 false bujhay akhane count +=1 increment hosse and last count ar value 3 peyese
 </p>
 </details>
