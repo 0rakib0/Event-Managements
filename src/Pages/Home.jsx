@@ -4,10 +4,19 @@ import Event from "./Event";
 import Shecdule from "./shecdule";
 import { Link } from "react-router-dom";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import the CSS file for styling
+
 const Home = () => {
 
     const [events, setEvents] = useState([])
     const [length, setLenght] = useState(8)
+
+
+    AOS.init({
+        duration: 3000,
+        once: true, 
+      });
 
 
     const shedule = [
@@ -63,7 +72,7 @@ const Home = () => {
             </div>
 
             {/* Events Section */}
-            <div className="my-6 w-11/12 mx-auto">
+            <div className="my-6 w-11/12 mx-auto" data-aos="slide-up">
                 <div className="text-center">
                     <span className="text-2xl text-primaryColor font-semibold">Event</span>
                     <h1 className="text-4xl font-bold my-2">EVENT SERVISES</h1>
@@ -86,12 +95,12 @@ const Home = () => {
                     <h1 className="text-4xl font-bold my-2">RECENT EVENT SCHEDULE</h1>
                     <h1 className="text-2xl font-semibold">08 OCTOBER 2021</h1>
                 </div>
-                <div className="">
+                <div className="" data-aos="slide-left">
                     {
                         shedule.slice(0, 2).map((shedule, idx) => <Shecdule key={idx} shecdule={shedule}></Shecdule>)
                     }
                 </div>
-                <div className="grid grid-cols-3 my-6 border-2 border-primaryColor">
+                <div data-aos="flip-up" className="grid grid-cols-3 my-6 border-2 border-primaryColor">
                     <div className="bg-primaryColor text-white text-2xl font-semibold text-center py-4">
                         <h1>1.30 PM - 2.30 PM</h1>
                         <p>Room No - 09</p>
@@ -100,7 +109,7 @@ const Home = () => {
                         <h1 className="text-2xl font-semibold">Lunch Time</h1>
                     </div>
                 </div>
-                <div className="">
+                <div className="" data-aos="slide-right">
                     {
                         shedule.slice(2, 4).map((shedule, idx) => <Shecdule key={idx} shecdule={shedule}></Shecdule>)
                     }
@@ -108,7 +117,7 @@ const Home = () => {
             </div>
 
             {/* Speaker Section */}
-            <div className="my-6 w-11/12 mx-auto">
+            <div className="my-6 w-11/12 mx-auto" data-aos="slide-left">
                 <div className="text-center">
                     <span className="text-2xl text-primaryColor font-semibold">Speakers</span>
                     <h1 className="text-4xl font-bold my-2">TALENTED SPEAKER</h1>
@@ -138,7 +147,7 @@ const Home = () => {
                 </div>
             </div>
             {/* Test monial Section */}
-            <div className="my-6 w-11/12 mx-auto grid md:grid-cols-2 items-center ">
+            <div data-aos="slide-right" className="my-6 w-11/12 mx-auto grid md:grid-cols-2 items-center ">
                 <div className="px-6">
                     <span className="text-2xl text-primaryColor font-semibold">Testimonial</span>
                     <h1 className="text-4xl font-bold my-2">WHAT PEOPLE SAY ABOUT EVENTLAB.</h1>
