@@ -1,8 +1,9 @@
 import { PropTypes } from "prop-types";
 import { FaCalendarAlt, FaLocationArrow, FaSitemap } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Event = ({ event }) => {
-    const { name, shortDescription, bannerImage, date, location, totalSeats } = event
+    const { name, shortDescription, bannerImage, date, location, totalSeats, eventID } = event
     return (
         <div className="rounded p-2 bg-base-100 shadow-xl">
             <div className="relative">
@@ -26,7 +27,7 @@ const Event = ({ event }) => {
                 <h2 className="card-title my-2">{name}</h2>
                 <p className="mb-2">{shortDescription}</p>
                 <div className="card-actions justify-start">
-                    <button className="text-primaryColor text-md font-semibold btn-link">Details</button>
+                <Link to={`/details/${eventID}`}><button className="text-primaryColor text-md font-semibold btn-link">Details</button></Link>
                 </div>
             </div>
         </div>
